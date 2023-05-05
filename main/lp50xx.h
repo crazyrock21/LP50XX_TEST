@@ -1,0 +1,89 @@
+#ifndef	__LP50XX_H__
+#define	__LP50XX_H__
+
+typedef enum {
+	REG_DEVICE_CONFIG0,
+	REG_DEVICE_CONFIG1,
+	REG_LED_CONFIG0,
+	REG_BANK_BRIGHTNESS,
+	REG_BANK_A_COLOR,
+	REG_BANK_B_COLOR,
+	REG_BANK_C_COLOR,
+	REG_LED0_BRIGHTNESS,
+	REG_LED1_BRIGHTNESS,
+	REG_LED2_BRIGHTNESS,
+	REG_LED3_BRIGHTNESS,
+	REG_OUT0_COLOR,
+	REG_OUT1_COLOR,
+	REG_OUT2_COLOR,
+	REG_OUT3_COLOR,
+	REG_OUT4_COLOR,
+	REG_OUT5_COLOR,
+	REG_OUT6_COLOR,
+	REG_OUT7_COLOR,
+	REG_OUT8_COLOR,
+	REG_OUT9_COLOR,
+	REG_OUT10_COLOR,
+	REG_OUT11_COLOR,
+	REG_RESET
+} LP50XX_REG;
+
+typedef enum {
+	CHIP_EN_BIT = 6,
+} REG_DEVICE_CONFIG0_BIT;
+
+typedef enum {
+	LED_GLOBAL_OFF_BIT = 0,
+	MAX_CURRENT_OPTION_BIT,
+	PWM_DITHERING_EN_BIT,
+	AUTO_INCR_EN_BIT,
+	POWER_SAVE_EN_BIT,
+	LOG_SCALE_EN_BIT,
+} REG_DEVICE_CONFIG1_BIT;
+
+typedef enum {
+	LED0_BANK_EN_BIT = 0,
+	LED1_BANK_EN_BIT,
+	LED2_BANK_EN_BIT,
+	LED3_BANK_EN_BIT,
+} REG_LED_CONFIG0_BIT;
+
+#define	RED_COLOR				0xff0000
+#define GREEN_COLOR				0x00ff00
+#define	BLUE_COLOR				0x0000ff
+
+#define	RED_COLOR_LED1			REG_OUT0_COLOR
+#define	GREEN_COLOR_LED1		REG_OUT1_COLOR
+#define	BLUE_COLOR_LED1			REG_OUT2_COLOR
+
+#define	RED_COLOR_LED2			REG_OUT3_COLOR
+#define	GREEN_COLOR_LED2		REG_OUT4_COLOR
+#define	BLUE_COLOR_LED2			REG_OUT5_COLOR
+
+#define	RED_COLOR_LED3			REG_OUT6_COLOR
+#define	GREEN_COLOR_LED3		REG_OUT7_COLOR
+#define	BLUE_COLOR_LED3			REG_OUT8_COLOR
+
+#define	RED_COLOR_LED4			REG_OUT9_COLOR
+#define	GREEN_COLOR_LED4		REG_OUT10_COLOR
+#define	BLUE_COLOR_LED4			REG_OUT11_COLOR
+
+typedef struct {
+	uint8_t out0_color_r;
+	uint8_t out1_color_g;
+	uint8_t out2_color_b;
+
+	uint8_t out3_color_r;
+	uint8_t out4_color_g;
+	uint8_t out5_color_b;
+
+	uint8_t out6_color_r;
+	uint8_t out7_color_g;
+	uint8_t out8_color_b;
+
+	uint8_t out9_color_;
+	uint8_t out10_color;
+	uint8_t out11_color;
+} led_color;
+
+#endif
